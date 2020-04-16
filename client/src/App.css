@@ -1,7 +1,7 @@
 /* Global Styles */
 :root {
-  --primary-color: #17a2b8;
-  --dark-color: #343a40;
+  --primary-color: rgb(80, 170, 240);
+  --dark-color: #ffffff;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
@@ -255,7 +255,7 @@ img {
   width: 100%;
   padding: 0.4rem;
   font-size: 1.2rem;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(134, 129, 129);
 }
 
 .form input[type='submit'],
@@ -317,7 +317,7 @@ button {
 }
 
 .navbar a {
-  color: #fff;
+  color: #E17276;
   padding: 0.45rem;
   margin: 0 0.25rem;
 }
@@ -333,7 +333,7 @@ button {
 /* Landing Page */
 .landing {
   position: relative;
-  background: url('./images/hands.jpg') no-repeat center center/cover;
+  /* background: url('./images/hands.jpg') no-repeat center center/cover; */
   height: 100vh;
 }
 
