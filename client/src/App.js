@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>hello</h1>
-    </div>
+    <Fragment>
+      <h1>Hello World</h1>
+    </Fragment>
   );
 }
 
