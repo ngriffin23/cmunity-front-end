@@ -6,10 +6,10 @@ import { logout } from '../../actions/auth';
 
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
-const authLinks = (
+  const authLinks = (
   <ul>
     <li>
-      <a onClick={logout} href='/'><i className="fas fa-sign-out-alt"></i>{' '}
+      <a onClick={logout} href='#!'><i className="fas fa-sign-out-alt"></i>{' '}
       <span className='hide-sm'>Logout</span></a>
     </li>
   </ul>
@@ -26,7 +26,7 @@ const guestLinks = (
     return (
     <nav className="navbar bg-dark">
       <h1>
-        <Link to='/'>CMUNITY</Link>
+        <Link to='#!'>CMUNITY</Link>
       </h1>
     { !loading && (<Fragment>{ isAuthenticated ? authLinks : guestLinks }</Fragment>) }
     </nav>
