@@ -3,7 +3,9 @@ import { setAlert } from './alert';
 import {
     GET_POSTS,
     POST_ERROR,
-    UPDATE_LIKES
+    UPDATE_LIKES,
+    DELETE_POST,
+    ADD_POST
 } from './types';
 
 
@@ -41,6 +43,7 @@ export const addLike = id => async dispatch => {
     }
 };
 
+// Remove Like
 export const removeLike = id => async dispatch => {
     try {
         const res = await axios.put(`http://localhost:5004/api/v1/posts/unlike/${id}`);
@@ -49,6 +52,50 @@ export const removeLike = id => async dispatch => {
             type: UPDATE_LIKES,
             payload: { id, likes: res.data }
         });
+    } catch (err) {
+        dispatch({
+            type: POST_ERROR,
+            payload: { msg: err.response.statusText, status: err.response.status }
+        });
+    }
+};
+
+// DELETE POST
+export const deletePost = id => async dispatch => {
+    try {
+        await axios.delete(`http://localhost:5004/api/v1/posts/${id}`);
+
+        dispatch({
+            type: DELETE_POST,
+            payload: id
+        });
+
+        dispatch(setAlert('Post was deleted', 'success'));
+    } catch (err) {
+        dispatch({
+            type: POST_ERROR,
+            payload: { msg: err.response.statusText, status: err.response.status }
+        });
+    }
+};
+
+// ADD POST
+export const addPost = formData => async dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+
+    try {
+        const res = await axios.post(`http://localhost:5004/api/v1/posts`, formData, config,);
+
+        dispatch({
+            type: ADD_POST,
+            payload: res.data
+        });
+
+        dispatch(setAlert('Post was created', 'success'));
     } catch (err) {
         dispatch({
             type: POST_ERROR,
