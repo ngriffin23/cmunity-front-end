@@ -264,6 +264,8 @@ button {
 }
 
 
+
+
 /* Navbar */
 .navbar {
   display: flex;
@@ -299,7 +301,7 @@ button {
 /* Landing Page */
 .landing {
   position: relative;
-  /* background: url('./images/hands.jpg') no-repeat center center/cover; */
+  background: url('./images/hands.jpg') no-repeat center center/cover;
   height: 100vh;
 }
 
