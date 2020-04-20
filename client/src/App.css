@@ -5,6 +5,7 @@
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
+  --theme-color: #E17276;
 }
 
 * {
@@ -72,6 +73,10 @@ img {
 
 .text-dark {
   color: var(--dark-color);
+}
+
+.text-theme {
+  color: var(--theme-color);
 }
 
 /* Padding */
@@ -245,9 +250,7 @@ img {
   color: #888;
 }
 
-.form input[type='text'],
-.form input[type='email'],
-.form input[type='password'],
+
 .form input[type='date'],
 .form select,
 .form textarea {
@@ -258,9 +261,39 @@ img {
   border: 1px solid rgb(134, 129, 129);
 }
 
+.form input[type='text'],
+.form input[type='email'],
+.form input[type='password'] 
+{
+  box-sizing: border-box;
+  background: transparent;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #626571;
+  color:black;
+  padding: 12px 6px 12px 36px;
+  font-size: 20px;
+  outline: none;
+  caret-color:#E17276;
+}
+
+
 .form input[type='submit'],
 button {
   font: inherit;
+
+  background: var(--primary-color);
+  border: none;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.65);
+  transition: all 0.3s;
 }
 
 
@@ -401,4 +434,30 @@ button {
   .post button {
     padding: 0.3rem 0.4rem;
   }
+}
+
+
+.login, .register {
+  position: relative;
+  z-index: 1;
+  background: rgb(255, 255, 255);
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+/* Comments */
+.comments {
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.65);
+  transition: all 0.3s;
 }

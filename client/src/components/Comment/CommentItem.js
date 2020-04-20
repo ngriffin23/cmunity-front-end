@@ -6,11 +6,11 @@ import Moment from 'react-moment';
 import { deleteComment } from '../../actions/post';
 
 const CommentItem = ({ postId, comment: { _id, text, name, user, date }, auth, deleteComment }) => (
-        <div class="post bg-white p-1 my-1">
+        <div className="post p-1 my-1">
         <div>
           <Link to={`/post/${user}`}>
             <img
-              class="round-img"
+              className="round-img"
               src="https://i.imgur.com/BRUYwke.png"
               alt=""
             />
@@ -18,15 +18,15 @@ const CommentItem = ({ postId, comment: { _id, text, name, user, date }, auth, d
           </Link>
         </div>
         <div>
-          <p class="my-1">
+          <p className="my-1">
             {text}
           </p>
-           <p class="post-date">
+           <p className="post-date">
               Posted on <Moment format="MM/DD/YYYY">{date}</Moment>
           </p>
           {!auth.loading && user === auth.user._id && (
               <button onClick={e => deleteComment(postId, _id)} type='button' className="btn btn-danger">
-                  <i className="fas fa-times"></i>
+                  <i className="fas fa-times"></i> Delete
               </button>
           )}
         </div>

@@ -12,7 +12,7 @@ const PostItem = ({
     auth, 
     post: { _id, title, text, name, user, likes, comments, date }, showActions
   }) => 
-    <div className="post bg-white p-1 my-1">
+    <div className="post comments p-1 my-1">
           <div>
             <Link to='#!'>
               <img className="round-img" src="https://i.imgur.com/BRUYwke.png" alt=""/>
@@ -34,14 +34,14 @@ const PostItem = ({
             <button onClick={e => removeLike(_id)} type="button" className="btn btn-light">
               <i className="fas fa-thumbs-down"></i>
             </button>
-            <Link to={`/posts/${_id}`} className="btn btn-primary">
+            <Link to={`/posts/${_id}`} className="btn comments btn-primary">
             Comments {comments.length > 0 && (
                 <span className='comment-count'>{comments.length}</span>
             )}
             </Link>
             {!auth.loading && user === auth.user._id && (
                 <button  onClick={e => deletePost(_id)}type="button" className="btn btn-danger">
-                <i className="fas fa-times"></i>
+                <i className="fas fa-times"></i> Delete
               </button>
             )}
             </Fragment> 

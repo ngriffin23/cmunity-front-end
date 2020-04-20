@@ -17,9 +17,9 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
             <p className='lead'>
             <i className='fas fa-user'></i> Welcome to CMUNITY
             </p>
-            <h4 className='large text-primary'>Discussions</h4>
            <PostForm />
             <div className='posts'>
+            <h4 className='large text-theme'>Discussions</h4>
                 {posts.map(post => (
                     <PostItem key={post._id} post={post} />
                 ))}
